@@ -3,6 +3,14 @@
 # Local .terraform directories
 **/.terraform/*
 
+*_credentials*
+stage.env
+prod.env
+.terraform
+id_rsa*
+terraform.*
+!terraform.tfvars
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
