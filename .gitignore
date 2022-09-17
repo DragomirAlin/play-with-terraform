@@ -2,7 +2,7 @@
 
 # Local .terraform directories
 **/.terraform/*
-
+*.env
 *_credentials*
 stage.env
 prod.env
@@ -10,6 +10,8 @@ prod.env
 id_rsa*
 terraform.*
 !terraform.tfvars
+
+*.lock.hcl
 
 # .tfstate files
 *.tfstate

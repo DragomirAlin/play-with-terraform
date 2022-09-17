@@ -1,19 +1,11 @@
-variable "region" {
-  type = string
-}
 
-variable "application_credential_id" {
+
+variable "sa_terraform" {
   type = string
 }
 
 
-variable "application_credential_secret" {
-  type = string
-}
 
-variable "auth_url" {
-  type = string
-}
 
 variable "keypair" {
   type = string
@@ -38,5 +30,21 @@ variable "flavor" {
 }
 
 variable "instance_name" {
+  type = string
+}
+
+variable "s3_endpoint" {
+  type = string
+}
+
+variable "s3_bucket" {
+  type = string
+}
+
+variable "s3_key" {
+  type = string
+}
+
+variable "s3_region" {
   type = string
 }

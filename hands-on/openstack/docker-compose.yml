@@ -13,4 +13,4 @@ services:
       - .:/project
     env_file: 
       - openstack.env
-    entrypoint: /project/entrypoint.sh
+      - aws.env
