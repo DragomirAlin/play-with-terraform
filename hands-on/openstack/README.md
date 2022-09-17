@@ -3,22 +3,30 @@
 * docker-compose run infra
 
 ### Running terraform 
-* cd to desired directory
-* rm -fr .terraform; 
-* terraform init --backend-config "bucket=$TF_s3_bucket" \
-   --backend-config "key=$TF_VAR_s3_key"
-
+* terraform init
 * terraform -help to explain all commands
 * terraform state
 * terraform plan 
 * terraform apply
 * terraform destroy
 
-### Terraform S3 Openstack backend
+### Terraform S3 OpenStack backend
 * https://www.terraform.io/docs/backends/types/s3.html
 
 1. Generate EC2 credentials
 ```bash
 openstack ec2 credentials create
 ```
+2. Create aws.env file
+```bash
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=
+AWS_S3_ENDPOINT=
+```
+
+### Openstack Provider
+
+1. Generate Openstack Credentials `clouds.yaml` called `openstack_credentials.yaml`
+
 
