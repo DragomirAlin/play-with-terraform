@@ -10,6 +10,14 @@
 * terraform apply
 * terraform destroy
 
+
+### Add infrastructure resources to terraform state
+* terraform import `<key>` (check documentation for key)
+Example:
+```terraform
+terraform import openstack_compute_instance_v2.instance_2 
+```
+
 ### Terraform S3 OpenStack backend
 * https://www.terraform.io/docs/backends/types/s3.html
 

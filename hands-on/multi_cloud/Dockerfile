@@ -17,6 +17,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN pip install python-openstackclient
 COPY openstack_credentials.yaml /etc/openstack/clouds.yaml
   
+RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscli.zip \
+  && unzip awscli.zip \
+  && ./aws/install \
+  && rm -rf aws awscli.zip
+
 # Terraform
 RUN wget -O /usr/bin/terraform_${TERRAFORM_VERSION}_linux_amd64.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 RUN unzip /usr/bin/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin \

@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  infra:
+    container_name: toolbox_infra
+    image: infra
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TERRAFORM_VERSION: ${TERRAFORM_VERSION}
+    volumes:
+      - .:/project
+    env_file: 
+      - openstack.env
+      - aws.env
