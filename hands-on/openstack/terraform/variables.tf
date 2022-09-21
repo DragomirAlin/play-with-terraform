@@ -1,31 +1,33 @@
-
-
-variable "sa_terraform" {
-  type = string
-}
-
-
-
-
+# 010-ssh-key.tf
 variable "keypair" {
-  type = string
+  type = map(string)
 }
 
+# 020-network.tf
 variable "network" {
-  type    = string
-  default = "public" # default network to be used
+  type = map(string)
 }
 
+variable "subnet" {
+  type = map(string)
+}
+
+variable "router" {
+  type = map(string)
+}
+
+# 030-sec-groups.tf
 variable "security_groups" {
   type    = list(string)
   default = ["default"] # Name of default security group
 }
 
-variable "image" {
+# 040-web-servers.tf
+variable "image_id" {
   type = string
 }
 
-variable "flavor" {
+variable "flavor_id" {
   type = string
 }
 
@@ -33,18 +35,9 @@ variable "instance_name" {
   type = string
 }
 
-variable "s3_endpoint" {
-  type = string
+variable "port" {
+  type = map(string)
 }
 
-variable "s3_bucket" {
-  type = string
-}
 
-variable "s3_key" {
-  type = string
-}
 
-variable "s3_region" {
-  type = string
-}
