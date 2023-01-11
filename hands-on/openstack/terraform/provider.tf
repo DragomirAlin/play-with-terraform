@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket                      = "terraform"
-    key                         = "state"
+    key                         = "k8s-dragomir.tfstate"
     encrypt                     = false
     skip_credentials_validation = true
     skip_region_validation      = true
@@ -17,7 +17,6 @@ terraform {
 
 provider "openstack" {
    cloud = "openstack"
-
 }
 
 
